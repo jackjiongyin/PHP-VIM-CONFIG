@@ -1,0 +1,2 @@
+# PHP-VIM-CONFIG
+VIM配置文件，将VIM配置成PHP开发的IDE
