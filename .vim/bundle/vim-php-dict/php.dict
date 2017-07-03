@@ -148,6 +148,7 @@ ArrayObject::unserialize
 ArrayObject::__construct
 array_change_key_case
 array_chunk
+array_column
 array_combine
 array_count_values
 array_diff
