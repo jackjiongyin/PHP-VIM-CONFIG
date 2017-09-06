@@ -22,6 +22,7 @@ set shiftwidth=4            " 自动缩进时，使用4个空格，默认是8个
 "set hidden                 " 允许在有未保存的修改时切换缓冲区
 ""set list                   " 显示Tab符，使用一高亮竖线代替
 syntax enable               " 打开语法高亮
+"set paste                  " 设置复制格式对齐
 "set background=dark
 "colorscheme solarized
 syntax on                   " 开启文件类型侦测
@@ -36,7 +37,7 @@ set nocompatible            " 不使用vi兼容的模式
 set enc=utf-8               " 设置编码
 set fenc=utf-8             " 设置文件编码
 set encoding=utf-8
-set fileencodings=ucs-born,utf-8,cp936
+set fileencodings=ucs-bom,utf-8,cp936
 "" 设置文件编码检测类型及支持格式
 
 "使用Vundle来管理Vundle
@@ -49,9 +50,10 @@ call vundle#rc()
 "
 ""PowerLine插件 状态栏增强展示
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'The-NERD-tree' " NERD-TREE文件树 
+Bundle 'The-NERD-tree'
 Bundle 'The-NERD-Commenter'
 Bundle 'neocomplcache'
+Bundle 'ctrlpvim/ctrlp.vim'
 "vim有一个状态栏 加上powline则有两个状态栏
 "set laststatus=2
 "set t_Co=256
@@ -139,3 +141,25 @@ nmap <C-@>e :cs find e <C-R>=expand("<cword>")<CR><CR>
 nmap <C-@>f :cs find f <C-R>=expand("<cword>")<CR><CR>
 nmap <C-@>i :cs find i ^<C-R>=expand("<cword>")<CR>$<CR>
 nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+
+let g:PHP_SYNTAX_CHECK_BIN = '/usr/bin/php' 
+
+" ctrlp
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+" let g:ctrlp_map = '<c-p>'
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+    \ 'file': '\v\.(exe|so|dll)$',
+    \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+    \ }
+"let g:ctrlp_user_command = 'find %s -type f'   
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_max_height=15
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_mruf_max=500
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_follow_symlinks=1
