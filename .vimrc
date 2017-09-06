@@ -1,5 +1,6 @@
 set shell=/bin/bash         " 设置使用的shell路径
 set undodir=$HOME/.undodir  " 设置撤销临时文件存放目录，默认与当前文件同级
+set ff=unix                 " 文件类型为unix类型
 
 lang messages zh_CN.UTF-8   " 设置中文界面
 set ai!                     " 设置自动缩进
